@@ -1,4 +1,4 @@
-#N canvas 779 130 375 368 10;
+#N canvas 895 110 375 409 10;
 #X declare -path abs;
 #X declare -lib pof;
 #X obj 18 178 pofwin;
@@ -90,12 +90,16 @@
 #X restore 17 241 pd mainHead;
 #X obj 17 220 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 138 240 concert;
+#X obj 164 288 concert;
 #X obj 138 211 r mainHead;
 #X msg 18 120 window 800 600 0 \, framerate 25 \, background 0 0 0
 ;
+#X obj 138 240 t a a;
+#X obj 138 329 abs/rec/rec;
 #X connect 1 0 0 0;
 #X connect 2 0 11 0;
 #X connect 8 0 7 0;
-#X connect 10 0 9 0;
+#X connect 10 0 12 0;
 #X connect 11 0 0 0;
+#X connect 12 0 13 0;
+#X connect 12 1 9 0;
