@@ -64,4 +64,4 @@ Carthage/Build
 obj/
 libs/*/
 build/
-raw/ofdataresources.zip
+res/raw/ofdataresources.zip
