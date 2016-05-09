@@ -1,0 +1,80 @@
+## Ouverture de l’application :
+
+Allumage #  “bienvenue sur Zicospital”
+
+## Console :
+
+HelpConsole # “voici la console de mixage grâce à laquelle vous allez pouvoir réaliser votre propre concert- pour lancer un morceau appuyer sur play song- etc”
+
+## PopUpchoixSong :
+
+ChoixSong # “choisissez un morceau à interpréter et confirmer”
+
+ChoixSongRappel # “je vous rappelle que vous devez choisir un morceau s’il vous plaît”
+
+## PopUpPlayMixTape :
+
+OuverturePlayMixTape # “selectionner un enregistrement pour l’écouter- appuyez sur Mail pour vous l’envoyer par email- ou appuyez sur Play pour réécouter votre dernier enregistrement- et sur Save pour le sauver”
+
+MailMixTape # “indiquez votre adresse email- et envoyer vous la MixTape selectionée”
+
+## PopUpRecMixTape :
+
+OuvertureRecMixTape # “si vous voulez sauver votre enregistrement- donnez lui un nom- tapez le et appuyez sur Save - vous pouvez aussi réécouter votre dernier enregistrement en appuyant sur play- sinon appuyez sur retour
+
+SaveMixTape # “Votre Mixtape est sauvée vous pourrez le réécouter plus tard et même vous l’envoyer en appuyant sur MixTape”
+
+# PopUpAbout :
+
+OuvertureAbout # “Cette application a été réalisée par Al1 & Ant1 - remerciement etc”
+
+## PopUpBalance :
+
+HelpBalance # “c'est ici que l'on peut enregistrer et regler ses propres sets de son- il suffit de sélectionner un instrument- et d'appuyer sur rec- et se laisser guider- il est possible d’enregistrer plusieurs exemplaires du même type en appuyant sur Plus - vous pouvez aussi écouter un son d’exemple en appuyant sur exemple- etc  “
+
+RecGrosseCaisse # “allez-y- faites la grosse caisse”
+
+RecCaisseClaire # “allez-y- faites un son de caisse claire”
+
+RecCharlestone # “allez-y- faites un son de charlestone”
+
+RecTom # “allez-y- faites un son de tom”
+
+RecCymbal # “allez-y- faites un son de cymbale”
+
+RecBasse # “allez-y- faites une note de bassse”
+
+RecGuitar # “allez-y- faites une note guitare”
+
+RecSynthe # “allez-y- faites une note de synthétiseur”
+
+RecPiano # “allez-y- faites une note de piano”
+
+RecChant # “allez-y- chantez une note”
+
+RelanceSon #  “je vous rappelle que vous devez enregistrer un son s’il vous plaît”
+
+RelanceExemple #  “vous pouvez vous réécouter en appuyant sur play- et entendre un son d’exemple en appuyant sur exemple”
+
+RelancePoly #  “en appuyant sur Plus vous pouvez enregistrer d’autres sons du même type pour avoir plus de variation sur l’instrument”
+
+## PopUpMode :
+
+OuvertureMode # “choisissez un personnage qui vous suivra pour votre balance”
+
+## PopUpSaveSet :
+
+OuvertureSaveSet # “écrivez le nom de votre set et décrivez le- puis confirmer”
+
+RelanceNomSet # “je vous rappel que vous devez écrire votre nom et confirmer s’il vous plait”
+
+ConfirmNom # “Merci- et maintenant- dites le nom de votre set avec votre nom et une description- vous pouvez le réécouter et confirmer”
+
+RelanceRecNom # “je vous rappel que vous devez dire le nom de votre set et confirmer s’il vous plaît”
+
+ConfirmNom # “Merci d’avoir enregistré votre set”
+
+## PopUpLoadSet :
+
+OuvertureLoadSet # “choisissez un set de son”
+
