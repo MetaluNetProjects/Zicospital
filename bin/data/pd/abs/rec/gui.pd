@@ -1,4 +1,4 @@
-#N canvas 752 245 616 410 10;
+#N canvas 820 242 616 410 10;
 #X obj 162 25 inlet head;
 #X obj 355 89 poftranslate;
 #X floatatom 452 86 5 0 0 0 - - -, f 5;
@@ -28,10 +28,10 @@
 #X floatatom 411 380 5 0 0 0 - - -, f 5;
 #X obj 471 200 clip 0 1;
 #X obj 474 177 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 5900 1;
+-1 -1 0 1;
 #X obj 471 224 * 80;
 #X obj 471 247 - 40;
-#X obj 231 268 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 231 268 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 227 289 sel 0 1;
 #X msg 226 313 set PlayBouton.png;
@@ -40,7 +40,7 @@
 #X msg 51 128 reserve RecBouton.png;
 #X obj 42 83 t b b;
 #X obj 42 52 loadbang;
-#X obj 234 36 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 234 36 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 230 57 sel 0 1;
 #X msg 244 84 set PlayBouton.png;
@@ -52,6 +52,8 @@
 #X obj 148 361 route down;
 #X obj 148 380 b;
 #X obj 355 295 poftranslate 0 -89;
+#X obj 533 241 line;
+#X msg 533 217 \$1 100;
 #X connect 0 0 1 0;
 #X connect 0 0 11 0;
 #X connect 0 0 12 0;
@@ -84,7 +86,7 @@
 #X connect 27 0 29 0;
 #X connect 28 0 27 0;
 #X connect 29 0 30 0;
-#X connect 30 0 23 1;
+#X connect 30 0 51 0;
 #X connect 31 0 32 0;
 #X connect 32 0 33 0;
 #X connect 32 1 34 0;
@@ -107,3 +109,5 @@
 #X connect 47 0 48 0;
 #X connect 48 0 31 0;
 #X connect 49 0 16 0;
+#X connect 50 0 23 1;
+#X connect 51 0 50 0;
