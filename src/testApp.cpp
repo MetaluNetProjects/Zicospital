@@ -11,6 +11,12 @@
 using namespace std;
 using namespace pd;
 
+// externals setup declarations :
+extern "C" {
+    extern void limiter_tilde_setup();
+    extern void z_tilde_setup(void);
+}
+
 //--------------------------------------------------------------
 void testApp::setup() {
 
@@ -46,6 +52,10 @@ void testApp::setup() {
 	
 	ofLogNotice("OF", "start pd");
 	puda.start();
+	
+	// load externals :
+	limiter_tilde_setup();
+	z_tilde_setup();
 	
 	ofLogNotice("OF", "load patch");
 	Patch patch = puda.openPatch(ofToDataPath("pd/pof_main.pd"));
