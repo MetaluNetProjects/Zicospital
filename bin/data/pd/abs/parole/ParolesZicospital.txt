@@ -1,3 +1,7 @@
+## Nom du mode
+
+Nom # "ce mode s'appelle Fred énervé !"
+
 ## Ouverture de l’application :
 
 Allumage #  “bienvenue sur Zicospital”
@@ -68,11 +72,11 @@ OuvertureSaveSet # “écrivez le nom de votre set et décrivez le- puis confirm
 
 RelanceNomSet # “je vous rappel que vous devez écrire votre nom et confirmer s’il vous plait”
 
-ConfirmNom # “Merci- et maintenant- dites le nom de votre set avec votre nom et une description- vous pouvez le réécouter et confirmer”
+ConfirmNomSet # “Merci- et maintenant- dites le nom de votre set avec votre nom et une description- vous pouvez le réécouter et confirmer”
 
 RelanceRecNom # “je vous rappel que vous devez dire le nom de votre set et confirmer s’il vous plaît”
 
-ConfirmNom # “Merci d’avoir enregistré votre set”
+ConfirmSet # “Merci d’avoir enregistré votre set”
 
 ## PopUpLoadSet :
 
