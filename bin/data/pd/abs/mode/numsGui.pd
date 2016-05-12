@@ -1,4 +1,4 @@
-#N canvas 906 162 450 330 10;
+#N canvas 907 160 459 372 10;
 #X obj 54 38 inlet head;
 #X obj 54 62 numItem 0;
 #X msg 175 36 reserve NumOff.png \, reserve NumOn.png;
@@ -10,12 +10,12 @@
 #X obj 227 197 list prepend;
 #X obj 227 167 symbol;
 #X obj 185 134 del 0;
-#X obj 227 243 pofxml modes;
+#X obj 227 272 pofxml modes;
 #X obj 181 175 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X msg 227 219 get /mode[@file=\$1][@\$2];
-#X obj 227 266 route get;
-#X obj 227 288 s mode-parole-nums;
+#X msg 227 248 get /mode[@file=\$1][@\$2];
+#X obj 227 295 route get;
+#X obj 227 317 s mode-parole-nums;
 #X obj 54 85 numItem 1;
 #X obj 54 107 numItem 2;
 #X obj 54 130 numItem 3;
@@ -25,6 +25,7 @@
 #X obj 54 220 numItem 7;
 #X obj 54 241 numItem 8;
 #X obj 54 264 numItem 9;
+#X obj 227 222 list split 2;
 #X connect 0 0 1 0;
 #X connect 1 0 16 0;
 #X connect 2 0 4 0;
@@ -32,7 +33,7 @@
 #X connect 5 0 10 0;
 #X connect 6 0 8 1;
 #X connect 7 0 9 0;
-#X connect 8 0 13 0;
+#X connect 8 0 25 0;
 #X connect 9 0 8 0;
 #X connect 10 0 9 0;
 #X connect 11 0 14 0;
@@ -47,3 +48,4 @@
 #X connect 21 0 22 0;
 #X connect 22 0 23 0;
 #X connect 23 0 24 0;
+#X connect 25 0 13 0;
