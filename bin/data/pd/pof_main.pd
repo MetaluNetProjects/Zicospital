@@ -1,7 +1,8 @@
-#N canvas 808 101 526 546 10;
+#N canvas 809 99 526 546 10;
 #X declare -path abs;
 #X declare -lib pof;
 #X declare -path abs;
+#X declare -path ../;
 #X declare -path ../;
 #X declare -path ../;
 #X declare -path ../;
@@ -96,8 +97,8 @@
 -1;
 #X obj 138 196 r mainHead;
 #X obj 202 17 declare -path abs;
-#X obj 42 292 mode/manager;
-#N canvas 912 311 450 300 strings&paths 0;
+#X obj 18 295 mode/manager;
+#N canvas 913 309 450 300 strings&paths 0;
 #X obj 162 206 pofutil;
 #X msg 162 180 setstring data .;
 #X obj 223 208 s datadir;
@@ -127,8 +128,8 @@
 #X obj 42 65 poffonts impact font/Impact.ttf;
 #X restore 255 160 pd fonts;
 #X obj 138 223 t a a a;
-#X obj 41 314 parole/manager;
-#X obj 41 358 rec/rec;
+#X obj 17 317 parole/manager;
+#X obj 17 361 rec/rec;
 #X msg 80 153 framerate 60;
 #X msg 18 120 window 800 600 0 \, framerate 60 \, background 0 0 0
 ;
@@ -144,9 +145,9 @@
 #X obj 66 464 concert/GUI;
 #X obj 157 269 s overHead;
 #X msg 382 160 \; page concert;
-#X obj 41 337 set/manager;
+#X obj 17 340 set/manager;
 #X obj 226 269 s pageHead;
-#X obj 42 385 song/player;
+#X obj 18 388 song/player;
 #N canvas 4 75 450 300 audioMaster 0;
 #X obj 224 56 catch~ Out-1;
 #X obj 113 168 *~;
@@ -172,11 +173,14 @@
 #X connect 9 0 8 0;
 #X connect 9 0 7 0;
 #X restore 327 299 pd audioMaster;
+#X obj 186 371 song/manager;
+#X obj 138 307 song/listGui;
 #X connect 1 0 0 0;
 #X connect 2 0 17 0;
 #X connect 6 0 5 0;
 #X connect 7 0 13 0;
 #X connect 11 0 10 0;
+#X connect 13 0 35 0;
 #X connect 13 1 28 0;
 #X connect 13 2 31 0;
 #X connect 16 0 0 0;

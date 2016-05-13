@@ -1,4 +1,4 @@
-#N canvas 775 261 577 469 10;
+#N canvas 776 259 577 542 10;
 #X declare -path ../;
 #X declare -path ../;
 #X declare -path ../;
@@ -515,7 +515,7 @@
 -262144 -1 -1 -10 256;
 #X obj 244 271 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 103 256;
-#N canvas 573 114 811 753 load/save 1;
+#N canvas 574 112 811 753 load/save 0;
 #X obj 112 10 inlet;
 #X obj 141 40 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 129 256;
@@ -829,7 +829,7 @@
 #X obj 412 593 r set-saving-save-enabled;
 #X obj 432 616 r set-saving-name;
 #X obj 411 701 s setCreate;
-#N canvas 610 78 631 603 ADMIN 1;
+#N canvas 610 78 631 603 ADMIN 0;
 #X obj 23 19 inlet;
 #X obj 23 57 pofvisible;
 #X obj 69 15 r ADMIN;
