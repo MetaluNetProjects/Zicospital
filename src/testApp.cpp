@@ -15,6 +15,9 @@ using namespace pd;
 extern "C" {
     extern void limiter_tilde_setup();
     extern void z_tilde_setup(void);
+    extern void seq_setup(void);
+    extern void seq_setup(void);
+    extern void midiparse_setup(void);
 }
 
 const char TAG[]="Zicospital";
@@ -56,9 +59,16 @@ void testApp::setup() {
 	ofLogNotice(TAG, "start pd");
 	puda.start();
 	
-	// load externals :
+	
+	// ------------ load externals -----------------
+	
 	limiter_tilde_setup();
 	z_tilde_setup();
+    seq_setup();
+    midiparse_setup();
+    
+    // ---------------------------------------------
+	
 	
 	ofLogNotice(TAG, "load patch");
 	Patch patch = puda.openPatch(ofToDataPath("pd/pof_main.pd"));
