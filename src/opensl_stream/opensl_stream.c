@@ -249,18 +249,33 @@ static SLresult openSLRecOpen(OPENSL_STREAM *p, SLuint32 sr) {
   SLDataSink audioSnk = {&loc_bq, &format_pcm};  // sink: buffer queue
 
   // create audio recorder (requires the RECORD_AUDIO permission)
-  const SLInterfaceID id[1] = {SL_IID_ANDROIDSIMPLEBUFFERQUEUE};
+  const SLInterfaceID id[2] = {SL_IID_ANDROIDCONFIGURATION, SL_IID_ANDROIDSIMPLEBUFFERQUEUE};
   const SLboolean req[1] = {SL_BOOLEAN_TRUE};
   SLresult result = (*p->engineEngine)->CreateAudioRecorder(
-      p->engineEngine, &p->recorderObject, &audioSrc, &audioSnk, 1, id, req);
+      p->engineEngine, &p->recorderObject, &audioSrc, &audioSnk, 2, id, req);
   if (SL_RESULT_SUCCESS != result) return result;
+
+/*********************************************/
+    SLAndroidConfigurationItf recorderConfig;
+    
+    result = (*p->recorderObject)->GetInterface(p->recorderObject, SL_IID_ANDROIDCONFIGURATION, &recorderConfig);
+    if (SL_RESULT_SUCCESS != result) return result;
+
+    SLint32 recordPreset = SL_ANDROID_RECORDING_PRESET_CAMCORDER;//SL_ANDROID_RECORDING_PRESET_VOICE_RECOGNITION;
+    
+    result = (*recorderConfig)->SetConfiguration(recorderConfig, SL_ANDROID_KEY_RECORDING_PRESET, &recordPreset, sizeof(SLint32));
+    if (SL_RESULT_SUCCESS != result) return result;
+
+/*********************************************/
 
   result = (*p->recorderObject)->Realize(p->recorderObject, SL_BOOLEAN_FALSE);
   if (SL_RESULT_SUCCESS != result) return result;
 
+
   result = (*p->recorderObject)->GetInterface(p->recorderObject,
       SL_IID_RECORD, &p->recorderRecord);
   if (SL_RESULT_SUCCESS != result) return result;
+
 
   result = (*p->recorderObject)->GetInterface(
       p->recorderObject, SL_IID_ANDROIDSIMPLEBUFFERQUEUE,
@@ -298,6 +313,8 @@ static SLresult openSLPlayOpen(OPENSL_STREAM *p, SLuint32 sr) {
       p->engineEngine, &p->outputMixObject, 1, mixIds, mixReq);
   if (result != SL_RESULT_SUCCESS) return result;
 
+
+  
   result = (*p->outputMixObject)->Realize(
       p->outputMixObject, SL_BOOLEAN_FALSE);
   if (result != SL_RESULT_SUCCESS) return result;
@@ -313,6 +330,14 @@ static SLresult openSLPlayOpen(OPENSL_STREAM *p, SLuint32 sr) {
       p->engineEngine, &p->playerObject, &audioSrc, &audioSnk,
       1, playIds, playRec);
   if (result != SL_RESULT_SUCCESS) return result;
+
+    /****************************************************/
+   /* SLAndroidConfigurationItf playerConfig;
+    result = (*p->playerObject)->GetInterface(p->playerObject,
+    SL_IID_ANDROIDCONFIGURATION, &playerConfig);
+    if (result != SL_RESULT_SUCCESS) return result;*/
+    /****************************************************/
+
 
   result = (*p->playerObject)->Realize(p->playerObject, SL_BOOLEAN_FALSE);
   if (result != SL_RESULT_SUCCESS) return result;

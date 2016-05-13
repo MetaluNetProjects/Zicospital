@@ -17,6 +17,8 @@ extern "C" {
     extern void z_tilde_setup(void);
 }
 
+const char TAG[]="Zicospital";
+
 //--------------------------------------------------------------
 void testApp::setup() {
 
@@ -34,30 +36,31 @@ void testApp::setup() {
     ofSetFrameRate(60);
 	ofSetVerticalSync(true);
 
-	ofLogNotice("OF", "init sound");
+	ofLogNotice(TAG, "init sound");
 	// setup OF sound stream
 	//ofSoundStreamSetup(2, numInputs, this, 44100, ofxPd::blockSize()*ticksPerBuffer, 4);
 	os = NULL;
 	os = opensl_open(44100, numInputs, 2, ticksPerBuffer*PdBase::blockSize(), testApp::opensl_process, (void*)this);
+	if(os == NULL) ofLogError(TAG, "error opening opensl");
 
 	ofxAccelerometer.setup();
 	
-	ofLogNotice("OF", "init pd");
+	ofLogNotice(TAG, "init pd");
 	if(!puda.init(2, numInputs, 44100, ticksPerBuffer)) {
 		ofExit();
 	}
 	
-	ofLogNotice("OF", "init pof");
+	ofLogNotice(TAG, "init pof");
 	pofBase::setup();
 	
-	ofLogNotice("OF", "start pd");
+	ofLogNotice(TAG, "start pd");
 	puda.start();
 	
 	// load externals :
 	limiter_tilde_setup();
 	z_tilde_setup();
 	
-	ofLogNotice("OF", "load patch");
+	ofLogNotice(TAG, "load patch");
 	Patch patch = puda.openPatch(ofToDataPath("pd/pof_main.pd"));
 		
 	if(os) opensl_start(os);
