@@ -1,4 +1,4 @@
-#N canvas 741 81 593 379 10;
+#N canvas 742 79 593 379 10;
 #X obj 112 115 pofxml modes;
 #X symbolatom 63 45 0 0 0 0 - - -;
 #N canvas 251 353 552 504 create 0;
