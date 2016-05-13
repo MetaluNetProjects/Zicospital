@@ -1,4 +1,4 @@
-#N canvas 149 262 620 559 10;
+#N canvas 151 258 620 559 10;
 #X obj 111 23 inlet head;
 #X obj 193 92 poftranslate;
 #X obj 202 69 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
@@ -14,7 +14,7 @@
 -262144 -1 -1 31 256;
 #X obj 70 207 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 262 166 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 262 166 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 58 161 poftranslate;
 #X obj 80 141 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
@@ -33,7 +33,7 @@
 #X obj 81 467 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 58 417 poftranslate 49;
-#X obj 280 423 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 270 424 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 81 445 imageTouchOnOff song/RecSong 0.3;
 #X obj 472 319 pofcolor 0 0 0 0.2;
@@ -48,6 +48,17 @@
 #X floatatom 528 94 5 0 0 0 - - -, f 5;
 #X obj 192 36 t a a;
 #X obj 404 125 pofimage SongLegend.png 75;
+#X obj 208 382 sel 0;
+#X obj 208 404 s song-choix-open;
+#X obj 264 218 sel 1;
+#X obj 295 270 s song-play;
+#X obj 176 292 sel 1;
+#X obj 176 314 s song-stop;
+#X obj 261 145 r song-playing;
+#X obj 351 171 metro 250;
+#X obj 350 198 r song-playing;
+#X obj 350 220 == 0;
+#X obj 335 241 f;
 #X connect 0 0 5 0;
 #X connect 0 0 32 0;
 #X connect 1 0 27 0;
@@ -56,16 +67,18 @@
 #X connect 5 0 10 0;
 #X connect 6 0 5 1;
 #X connect 7 0 5 2;
-#X connect 8 0 9 0;
+#X connect 8 0 36 0;
 #X connect 9 0 12 2;
 #X connect 10 0 12 0;
 #X connect 10 0 15 0;
 #X connect 11 0 10 1;
 #X connect 12 0 8 0;
+#X connect 13 0 38 0;
 #X connect 14 0 13 0;
 #X connect 15 0 14 0;
 #X connect 15 0 17 0;
 #X connect 16 0 19 0;
+#X connect 16 0 34 0;
 #X connect 17 0 18 0;
 #X connect 17 0 21 0;
 #X connect 18 0 16 0;
@@ -83,3 +96,9 @@
 #X connect 31 0 33 1;
 #X connect 32 0 1 0;
 #X connect 32 1 28 0;
+#X connect 34 0 35 0;
+#X connect 36 0 37 0;
+#X connect 38 0 39 0;
+#X connect 40 0 9 0;
+#X connect 42 0 43 0;
+#X connect 43 0 44 1;
