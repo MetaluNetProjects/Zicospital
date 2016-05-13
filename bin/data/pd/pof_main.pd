@@ -1,7 +1,8 @@
-#N canvas 807 106 526 546 10;
+#N canvas 807 103 526 546 10;
 #X declare -path abs;
 #X declare -lib pof;
 #X declare -path abs;
+#X declare -path ../;
 #X declare -path ../;
 #X declare -path ../;
 #X declare -path ../;
@@ -145,6 +146,7 @@
 #X msg 382 160 \; page concert;
 #X obj 41 337 set/manager;
 #X obj 226 269 s pageHead;
+#X obj 42 385 song/player;
 #X connect 1 0 0 0;
 #X connect 2 0 17 0;
 #X connect 6 0 5 0;
