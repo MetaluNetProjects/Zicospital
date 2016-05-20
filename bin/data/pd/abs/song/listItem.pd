@@ -1,4 +1,4 @@
-#N canvas 816 282 620 541 10;
+#N canvas 816 280 620 541 10;
 #X msg 203 435 text Hello;
 #X obj 58 89 t a a;
 #X obj 85 114 pofcolor 0 0 0 0.9;
@@ -101,11 +101,12 @@
 #X connect 18 2 11 0;
 #X restore 402 182 pd makeName;
 #X obj 57 327 poftexts typo 21 -1;
-#X msg 233 175 width \$1;
-#X obj 236 148 r \$1-width;
+#X msg 236 189 width \$1;
+#X obj 236 140 r \$1-width;
 #X msg 204 457 text dcjdkjdf kl lkj lkj kl kl kl hjsvbkjdvbkdjsvbksdv
 ;
 #X obj 58 298 poftranslate -140 0;
+#X obj 236 164 * 0.95;
 #X connect 0 0 54 0;
 #X connect 1 0 44 0;
 #X connect 1 1 2 0;
@@ -171,6 +172,7 @@
 #X connect 52 2 46 0;
 #X connect 53 0 6 0;
 #X connect 55 0 54 0;
-#X connect 56 0 55 0;
+#X connect 56 0 59 0;
 #X connect 57 0 54 0;
 #X connect 58 0 54 0;
+#X connect 59 0 55 0;

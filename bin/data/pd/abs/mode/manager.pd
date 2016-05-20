@@ -1,5 +1,5 @@
-#N canvas 742 79 593 379 10;
-#X obj 112 115 pofxml modes;
+#N canvas 744 75 593 379 10;
+#X obj 93 119 pofxml modes;
 #X symbolatom 63 45 0 0 0 0 - - -;
 #N canvas 251 353 552 504 create 0;
 #X obj 89 127 pofutil;
@@ -157,7 +157,7 @@
 #X restore 28 205 pd setName;
 #X obj 117 242 s modeSetName;
 #X msg 157 214 doudou;
-#X msg 112 92 print;
+#X msg 93 96 print;
 #X msg 207 213 coco;
 #X msg 243 213 lili;
 #N canvas 942 217 450 349 mode-update-paroles 0;
@@ -398,14 +398,13 @@
 #X connect 39 2 6 0;
 #X connect 41 0 1 0;
 #X restore 312 133 pd modes-update-all;
-#N canvas 5 75 446 394 autosave 0;
+#N canvas 7 75 446 394 autosave 0;
 #X obj 129 208 pofxml modes;
 #X msg 88 137 print;
 #X obj 212 25 s modesUpdate;
 #X obj 129 67 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 129 22 loadbang;
-#X obj 129 44 del 1000;
 #X obj 172 117 r modesChanged;
 #X obj 172 141 b;
 #X obj 172 162 del 200;
@@ -416,21 +415,22 @@
 #X obj 92 293 pofxml modes;
 #X msg 92 269 getnum /;
 #X obj 92 316 s modesNumber;
+#X obj 129 44 del 1;
 #X connect 1 0 0 0;
-#X connect 3 0 9 0;
-#X connect 3 0 11 0;
-#X connect 4 0 5 0;
-#X connect 5 0 3 0;
+#X connect 3 0 8 0;
+#X connect 3 0 10 0;
+#X connect 4 0 15 0;
+#X connect 5 0 6 0;
 #X connect 6 0 7 0;
-#X connect 7 0 8 0;
-#X connect 8 0 10 0;
-#X connect 8 0 11 0;
+#X connect 7 0 9 0;
+#X connect 7 0 10 0;
+#X connect 8 0 0 0;
 #X connect 9 0 0 0;
-#X connect 10 0 0 0;
-#X connect 11 0 12 0;
+#X connect 10 0 11 0;
+#X connect 11 0 13 0;
 #X connect 12 0 14 0;
-#X connect 13 0 15 0;
-#X connect 14 0 13 0;
+#X connect 13 0 12 0;
+#X connect 15 0 3 0;
 #X restore 107 148 pd autosave;
 #X obj 312 111 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113
 -1 -1;
@@ -442,6 +442,8 @@
 #X obj 299 249 r mode;
 #X obj 299 268 b;
 #X obj 299 289 del 0;
+#X obj 413 329 mode/say 1 Allumage;
+#X obj 415 294 mode/say 1 rien;
 #X connect 1 0 5 1;
 #X connect 5 0 9 0;
 #X connect 6 0 1 0;

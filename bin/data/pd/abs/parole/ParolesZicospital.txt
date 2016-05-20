@@ -18,23 +18,25 @@ ChoixSongRappel # “je vous rappelle que vous devez choisir un morceau s’il v
 
 ## PopUpPlayMixTape :
 
-OuverturePlayMixTape # “selectionner un enregistrement pour l’écouter- appuyez sur Mail pour vous l’envoyer par email- ou appuyez sur Play pour réécouter votre dernier enregistrement- et sur Save pour le sauver”
+OuverturePlayMixTape # “selectionner un enregistrement pour l’écouter- appuyez sur Mail pour l’envoyer par email
 
-MailMixTape # “indiquez votre adresse email- et envoyer vous la MixTape selectionée”
+MailMixTape # “indiquez l'adresse email à laquelle vous voulez envoyer la MixTape selectionée”
 
 ## PopUpRecMixTape :
 
-OuvertureRecMixTape # “si vous voulez sauver votre enregistrement- donnez lui un nom- tapez le et appuyez sur Save - vous pouvez aussi réécouter votre dernier enregistrement en appuyant sur play- sinon appuyez sur retour
+OuvertureRecMixTape # “si vous voulez sauver votre enregistrement appuyez sur Save - vous pouvez d'abord le réécouter en appuyant sur play"
 
-SaveMixTape # “Votre Mixtape est sauvée vous pourrez le réécouter plus tard et même vous l’envoyer en appuyant sur MixTape”
+NomMixTape # “donnez un nom à votre enregistrement"
+
+SaveMixTape # “Votre Mixtape est sauvée vous pourrez la réécouter plus tard et même l’envoyer par mail en appuyant sur MixTape”
 
 # PopUpAbout :
 
-OuvertureAbout # “Cette application a été réalisée par Al1 & Ant1 - remerciement etc”
+OuvertureAbout # “Cette application a été réalisée par Al1 & Ant1 et Métalu.net - en collaboration avec L'Aéronef la Polyclinique du Bois et L'Agence Régionale de Santé Nord-Pas-de-Calais-Picardie”
 
 ## PopUpBalance :
 
-HelpBalance # “c'est ici que l'on peut enregistrer et regler ses propres sets de son- il suffit de sélectionner un instrument- et d'appuyer sur rec- et se laisser guider- il est possible d’enregistrer plusieurs exemplaires du même type en appuyant sur Plus - vous pouvez aussi écouter un son d’exemple en appuyant sur exemple- etc  “
+HelpBalance # “c'est ici que l'on peut enregistrer et regler ses propres sets de son- il suffit de sélectionner un instrument d'appuyer sur rec- et se laisser guider. “ 
 
 RecGrosseCaisse # “allez-y- faites la grosse caisse”
 
@@ -58,23 +60,19 @@ RecChant # “allez-y- chantez une note”
 
 RelanceSon #  “je vous rappelle que vous devez enregistrer un son s’il vous plaît”
 
-RelanceExemple #  “vous pouvez vous réécouter en appuyant sur play- et entendre un son d’exemple en appuyant sur exemple”
-
-RelancePoly #  “en appuyant sur Plus vous pouvez enregistrer d’autres sons du même type pour avoir plus de variation sur l’instrument”
-
 ## PopUpMode :
 
 OuvertureMode # “choisissez un personnage qui vous suivra pour votre balance”
 
 ## PopUpSaveSet :
 
-OuvertureSaveSet # “écrivez le nom de votre set et décrivez le- puis confirmer”
+OuvertureSaveSet # “écrivez le nom de votre set et décrivez le oralement - puis confirmez”
 
-RelanceNomSet # “je vous rappel que vous devez écrire votre nom et confirmer s’il vous plait”
+RelanceNomSet # “je vous rappelle que vous devez écrire le nom de votre set”
 
 ConfirmNomSet # “Merci- et maintenant- dites le nom de votre set avec votre nom et une description- vous pouvez le réécouter et confirmer”
 
-RelanceRecNom # “je vous rappel que vous devez dire le nom de votre set et confirmer s’il vous plaît”
+RelanceRecNom # “vous devez dire le nom de votre set s’il vous plaît”
 
 ConfirmSet # “Merci d’avoir enregistré votre set”
 

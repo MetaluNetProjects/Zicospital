@@ -9,7 +9,7 @@
 #X obj 222 167 * -1;
 #X obj 207 190 *;
 #X obj 268 39 hsl 128 15 0 20 0 0 list-\$1-pos list-\$1-pos list-pos
--2 -8 0 10 -262144 -1 -1 30 1;
+-2 -8 0 10 -262144 -1 -1 0 1;
 #X msg 615 177 12;
 #X obj 413 86 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -75,12 +75,12 @@
 #X obj 291 595 min;
 #X floatatom 402 419 5 1 100 0 - - -, f 5;
 #X obj 291 640 -;
-#N canvas 668 383 581 462 scroll 0;
+#N canvas 669 381 581 462 scroll 1;
 #X obj 149 27 inlet;
 #X obj 185 79 unpack f f;
 #X obj 255 78 unpack f f;
-#X obj 362 192 s list-\$1-touchCancel;
-#X obj 362 170 b;
+#X obj 385 191 s list-\$1-touchCancel;
+#X obj 385 169 b;
 #X obj 264 213 r list-\$1-spacing;
 #X obj 249 236 /;
 #X obj 249 384 s list-\$1-pos;
@@ -110,10 +110,14 @@
 #X obj 316 125 abs;
 #X obj 121 216 outlet on;
 #X obj 406 326 s \$0-maxpos;
-#X floatatom 391 136 5 0 0 0 - - -, f 5;
-#X obj 316 145 moses 10;
+#X floatatom 391 96 5 0 0 0 - - -, f 5;
 #X obj 88 314 r list-\$1-setpos;
 #X msg 185 385 0;
+#X obj 316 145 moses 60;
+#X obj 183 140 b;
+#X obj 209 200 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 183 159 del 1000;
 #X connect 0 0 22 0;
 #X connect 1 1 9 0;
 #X connect 1 1 24 0;
@@ -143,6 +147,7 @@
 #X connect 22 1 1 0;
 #X connect 22 2 2 0;
 #X connect 22 2 19 0;
+#X connect 22 2 37 0;
 #X connect 23 0 6 0;
 #X connect 24 0 23 1;
 #X connect 24 1 23 0;
@@ -151,10 +156,13 @@
 #X connect 27 0 26 1;
 #X connect 28 0 27 0;
 #X connect 30 0 33 0;
-#X connect 30 0 34 0;
-#X connect 34 1 4 0;
+#X connect 30 0 36 0;
+#X connect 34 0 17 0;
 #X connect 35 0 17 0;
-#X connect 36 0 17 0;
+#X connect 36 1 4 0;
+#X connect 37 0 39 0;
+#X connect 39 0 4 0;
+#X connect 39 0 38 0;
 #X restore 375 282 pd scroll;
 #X obj 291 617 t f f;
 #X obj 325 639 * 0.5;
