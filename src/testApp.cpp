@@ -18,6 +18,7 @@ extern "C" {
     extern void seq_setup(void);
     extern void seq_setup(void);
     extern void midiparse_setup(void);
+    extern void atan_tilde_setup();
 }
 
 const char TAG[]="Zicospital";
@@ -66,6 +67,7 @@ void testApp::setup() {
 	z_tilde_setup();
     seq_setup();
     midiparse_setup();
+    atan_tilde_setup();
     
     // ---------------------------------------------
 	
