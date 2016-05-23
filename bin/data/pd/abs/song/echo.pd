@@ -1,0 +1,6 @@
+#N canvas 4 75 450 300 10;
+#X obj 128 38 inlet~;
+#X obj 213 34 inlet time;
+#X obj 308 33 inlet fb;
+#X obj 128 85 delwrite~ \$0-d 1000;
+#X connect 0 0 3 0;

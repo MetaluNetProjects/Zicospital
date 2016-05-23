@@ -1,4 +1,4 @@
-#N canvas 814 89 526 546 10;
+#N canvas 833 82 526 546 10;
 #X declare -path abs;
 #X declare -lib pof;
 #X declare -path abs;
@@ -148,7 +148,7 @@
 #X obj 17 340 set/manager;
 #X obj 177 246 s pageHead;
 #X obj 18 419 song/player;
-#N canvas 7 75 570 416 audioMaster 0;
+#N canvas 8 75 570 416 audioMaster 0;
 #X obj 211 163 catch~ Out-1;
 #X obj 80 278 *~;
 #X obj 96 255 z~ 64;
@@ -174,6 +174,9 @@
 #X msg 364 229 1;
 #X obj 325 170 *~;
 #X obj 325 99 max 0.3;
+#X obj 335 332 rev2~ 90 90 3000 50;
+#X obj 335 304 catch~ OutMusic-rev;
+#X obj 335 360 OutMusic~;
 #X connect 0 0 9 0;
 #X connect 1 0 10 0;
 #X connect 2 0 1 1;
@@ -201,6 +204,9 @@
 #X connect 23 0 14 1;
 #X connect 23 0 13 1;
 #X connect 24 0 21 0;
+#X connect 25 0 27 0;
+#X connect 25 1 27 1;
+#X connect 26 0 25 0;
 #X restore 327 299 pd audioMaster;
 #X obj 16 363 song/manager;
 #X obj 138 291 song/listGui;

@@ -1,4 +1,4 @@
-#N canvas 780 251 577 542 10;
+#N canvas 781 249 577 542 10;
 #X declare -path ../;
 #X declare -path ../;
 #X declare -path ../;
@@ -77,7 +77,7 @@
 #X floatatom 395 237 5 0 0 0 - - -, f 5;
 #X floatatom 439 233 5 0 0 0 - - -, f 5;
 #X obj 372 260 poftranslate 191 72;
-#N canvas 614 121 822 680 PLAY/REC 0;
+#N canvas 614 119 822 680 PLAY/REC 0;
 #X obj 48 53 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 162 119 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -1205,6 +1205,105 @@
 #X connect 129 0 128 0;
 #X restore 150 316 pd set_load/save;
 #X obj 7 113 topBar Balance;
+#X obj 259 367 poftranslate 0 8;
+#X obj 291 345 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 -220 256;
+#X obj 353 344 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 79 256;
+#N canvas 706 202 663 465 fx 1;
+#X obj 46 21 inlet;
+#X obj 75 51 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 279 256;
+#X obj 137 50 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 212 256;
+#X obj 115 17 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 46 74 cadre;
+#X floatatom 135 170 5 0 0 0 - - -, f 5;
+#X obj 78 123 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 -75 256;
+#X obj 140 122 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 -50 256;
+#X obj 46 145 poftranslate;
+#X floatatom 369 170 5 0 0 0 - - -, f 5;
+#X obj 303 122 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 64 256;
+#X obj 374 122 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 -50 256;
+#X obj 280 145 poftranslate;
+#X obj 78 245 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 140 244 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 70 256;
+#X obj 46 267 poftranslate;
+#X obj 119 224 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 46 290 imageKnob balance/Effet.png 0.3;
+#X obj 312 254 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 374 253 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 70 256;
+#X obj 280 276 poftranslate;
+#X obj 353 233 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 280 299 imageKnob balance/Param.png 0.3;
+#X obj 46 203 pofimage EffetLegend.png 100;
+#X obj 280 203 pofimage ParamLegend.png 100;
+#X obj 204 10 r balance-instr;
+#X obj 463 111 tabread set-table-fx;
+#X obj 369 48 * 2;
+#X obj 463 88 + 1;
+#X obj 229 93 tabread set-table-fx;
+#X obj 307 346 tabwrite set-table-fx;
+#X obj 73 338 tabwrite set-table-fx;
+#X obj 189 393 f;
+#X obj 46 313 t b f;
+#X obj 280 321 t b f;
+#X obj 189 417 s fx-update-instr;
+#X connect 0 0 4 0;
+#X connect 1 0 4 1;
+#X connect 2 0 4 2;
+#X connect 3 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 8 0;
+#X connect 4 0 12 0;
+#X connect 5 0 23 1;
+#X connect 6 0 8 1;
+#X connect 7 0 8 2;
+#X connect 8 0 23 0;
+#X connect 9 0 24 1;
+#X connect 10 0 12 1;
+#X connect 11 0 12 2;
+#X connect 12 0 24 0;
+#X connect 13 0 15 1;
+#X connect 14 0 15 2;
+#X connect 15 0 17 0;
+#X connect 16 0 13 0;
+#X connect 16 0 14 0;
+#X connect 17 0 33 0;
+#X connect 18 0 20 1;
+#X connect 19 0 20 2;
+#X connect 20 0 22 0;
+#X connect 21 0 18 0;
+#X connect 21 0 19 0;
+#X connect 22 0 34 0;
+#X connect 23 0 15 0;
+#X connect 24 0 20 0;
+#X connect 25 0 27 0;
+#X connect 25 0 32 1;
+#X connect 26 0 22 3;
+#X connect 27 0 28 0;
+#X connect 27 0 29 0;
+#X connect 27 0 31 1;
+#X connect 28 0 26 0;
+#X connect 28 0 30 1;
+#X connect 29 0 17 3;
+#X connect 32 0 35 0;
+#X connect 33 0 32 0;
+#X connect 33 1 31 0;
+#X connect 34 0 32 0;
+#X connect 34 1 30 0;
+#X restore 259 389 pd fx;
 #X connect 0 0 1 0;
 #X connect 1 0 19 0;
 #X connect 1 0 36 0;
@@ -1227,6 +1326,7 @@
 #X connect 19 0 10 0;
 #X connect 19 1 21 0;
 #X connect 19 1 31 0;
+#X connect 19 1 37 0;
 #X connect 19 2 17 0;
 #X connect 24 0 27 0;
 #X connect 25 0 26 0;
@@ -1235,3 +1335,6 @@
 #X connect 31 0 35 0;
 #X connect 32 0 31 1;
 #X connect 33 0 31 2;
+#X connect 37 0 40 0;
+#X connect 38 0 37 1;
+#X connect 39 0 37 2;

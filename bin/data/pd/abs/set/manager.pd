@@ -1,4 +1,4 @@
-#N canvas 726 95 618 523 10;
+#N canvas 727 93 618 523 10;
 #X obj 65 41 loadbang;
 #X msg 65 62 Kick Snare Hihat Tom Cymbale Basse Guitare Synthe Piano
 Chant;
@@ -406,6 +406,7 @@ Chant;
 #X msg 299 401 10;
 #X obj 299 470 s rec-playtab;
 #X msg 299 447 list set-table-10 \$1;
+#X obj 66 458 table set-table-fx 30;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 3 0 1 0;
