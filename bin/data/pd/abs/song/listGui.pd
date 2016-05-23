@@ -1,4 +1,4 @@
-#N canvas 857 75 553 705 10;
+#N canvas -64 165 553 705 10;
 #X declare -path ../;
 #X obj 31 9 inlet head;
 #X obj 362 178 hsl 128 15 0 20 0 0 list-sets-pos list-sets-pos list-pos
@@ -227,6 +227,8 @@
 #X obj 58 418 pofrect 510 50 10 10 0 0;
 #X obj 77 374 pofrect 510 70 0 0 10 10;
 #X obj 380 290 pofrect 510 345 10 10 0 0;
+#X msg 356 351 slider force 1 \, slider width 150;
+#X obj 356 327 loadbang;
 #X connect 0 0 40 0;
 #X connect 2 0 33 0;
 #X connect 4 0 33 0;
@@ -283,3 +285,5 @@
 #X connect 52 0 53 0;
 #X connect 54 0 41 0;
 #X connect 55 0 53 0;
+#X connect 61 0 57 1;
+#X connect 62 0 61 0;
