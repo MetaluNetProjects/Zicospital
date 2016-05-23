@@ -1,4 +1,4 @@
-#N canvas 804 106 632 692 10;
+#N canvas 800 116 632 692 10;
 #X obj 142 359 poftouch;
 #X obj 142 77 inlet;
 #X obj 142 157 pofscale 1 1 1;
@@ -15,7 +15,7 @@
 #X obj 169 214 pofrotate;
 #X obj 187 381 route up move down;
 #X obj 420 74 inlet set;
-#X obj 420 103 s \$0-val;
+#X obj 477 124 s \$0-val;
 #X obj 300 145 r \$0-val;
 #X obj 300 168 clip 0 1;
 #X obj 300 190 * 270;
@@ -40,13 +40,14 @@
 #X obj 263 36 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X msg 87 313 draw \$1;
-#X obj 89 288 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 89 288 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 344 285 shape ellipse;
 #X obj 232 308 max;
 #X obj 232 330 * 1.2;
 #X obj 169 241 pofimage \$1;
 #X obj 344 264 loadbang;
+#X obj 420 98 route incr;
 #X connect 0 1 14 0;
 #X connect 1 0 2 0;
 #X connect 2 0 12 0;
@@ -66,7 +67,7 @@
 #X connect 14 1 24 0;
 #X connect 14 2 25 0;
 #X connect 14 2 26 0;
-#X connect 15 0 16 0;
+#X connect 15 0 46 0;
 #X connect 17 0 18 0;
 #X connect 18 0 19 0;
 #X connect 19 0 20 0;
@@ -97,3 +98,5 @@
 #X connect 43 0 0 2;
 #X connect 44 1 8 0;
 #X connect 45 0 41 0;
+#X connect 46 0 29 0;
+#X connect 46 1 16 0;

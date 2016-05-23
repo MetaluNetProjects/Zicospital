@@ -1,4 +1,4 @@
-#N canvas 790 404 450 345 10;
+#N canvas 788 409 450 345 10;
 #X obj 75 9 inlet head;
 #X floatatom 141 30 5 0 0 0 - - -, f 5;
 #X floatatom 189 27 5 0 0 0 - - -, f 5;
@@ -12,7 +12,7 @@
 #X obj 75 242 fader 7 \$1;
 #X obj 75 263 fader 8 \$1;
 #X obj 75 283 fader 9 \$1;
-#X obj 75 68 poftranslate -324 179;
+#X obj 75 68 poftranslate -324 165;
 #X connect 0 0 13 0;
 #X connect 1 0 13 1;
 #X connect 2 0 13 2;
