@@ -1,4 +1,4 @@
-#N canvas 833 82 526 546 10;
+#N canvas 850 327 526 546 10;
 #X declare -path abs;
 #X declare -lib pof;
 #X declare -path abs;
@@ -22,7 +22,7 @@
 #X restore 18 98 pd bang_on_first_frame;
 #X obj 14 30 declare -path abs;
 #X obj 14 10 declare -lib pof;
-#N canvas 747 198 689 446 mainHead 0;
+#N canvas 745 203 689 446 mainHead 0;
 #X obj 100 16 pofhead;
 #X obj 156 20 pofwin;
 #X obj 156 44 route window;
@@ -57,6 +57,8 @@
 #X obj 100 411 credit;
 #X obj 100 388 poftranslate 300 270;
 #X obj 344 194 del 3000;
+#X obj 263 20 s ScreenScaleW;
+#X obj 278 42 s ScreenScaleH;
 #X connect 0 0 6 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
@@ -88,8 +90,10 @@
 #X connect 27 0 31 0;
 #X connect 28 0 4 0;
 #X connect 28 0 6 1;
+#X connect 28 0 33 0;
 #X connect 29 0 4 1;
 #X connect 29 0 6 2;
+#X connect 29 0 34 0;
 #X connect 31 0 30 0;
 #X connect 32 0 16 0;
 #X restore 23 234 pd mainHead;
@@ -133,7 +137,7 @@
 #X msg 80 153 framerate 60;
 #X msg 18 120 window 800 600 0 \, framerate 60 \, background 0 0 0
 ;
-#X obj 345 409 mode/edit;
+#X obj 345 432 mode/edit;
 #X obj 161 56 loadbang;
 #X obj 161 78 del 10000;
 #X msg 161 98 build \, bang;
@@ -142,8 +146,8 @@
 #X obj 382 137 loadbang;
 #X obj 345 387 pageHead modeEdit;
 #X obj 237 410 balance/GUI;
-#X obj 128 411 concert/GUI;
-#X obj 157 269 s overHead;
+#X obj 128 413 concert/GUI;
+#X obj 184 308 s overHead;
 #X msg 382 160 \; page concert;
 #X obj 17 340 set/manager;
 #X obj 177 246 s pageHead;
@@ -209,7 +213,7 @@
 #X connect 27 1 26 1;
 #X restore 327 299 pd audioMaster;
 #X obj 16 363 song/manager;
-#X obj 138 291 song/listGui;
+#X obj 157 328 song/listGui;
 #X obj 355 28 loadbang;
 #X msg 355 50 \; pd dsp 1;
 #N canvas 59 548 450 300 INIT 0;
@@ -238,13 +242,15 @@
 #X connect 9 0 2 0;
 #X connect 11 0 5 0;
 #X restore 328 328 pd INIT;
+#X obj 157 266 fixScaleX;
+#X obj 157 287 t a a;
+#X obj 345 408 fixScaleX;
 #X connect 1 0 0 0;
 #X connect 2 0 17 0;
 #X connect 6 0 5 0;
 #X connect 7 0 13 0;
 #X connect 11 0 10 0;
-#X connect 13 0 35 0;
-#X connect 13 1 28 0;
+#X connect 13 1 39 0;
 #X connect 13 2 31 0;
 #X connect 16 0 0 0;
 #X connect 17 0 0 0;
@@ -254,5 +260,9 @@
 #X connect 22 0 27 0;
 #X connect 23 0 26 0;
 #X connect 24 0 29 0;
-#X connect 25 0 18 0;
+#X connect 25 0 41 0;
 #X connect 36 0 37 0;
+#X connect 39 0 40 0;
+#X connect 40 0 35 0;
+#X connect 40 1 28 0;
+#X connect 41 0 18 0;

@@ -1,4 +1,4 @@
-#N canvas -64 165 553 705 10;
+#N canvas 720 170 553 705 10;
 #X declare -path ../;
 #X obj 31 9 inlet head;
 #X obj 362 178 hsl 128 15 0 20 0 0 list-sets-pos list-sets-pos list-pos

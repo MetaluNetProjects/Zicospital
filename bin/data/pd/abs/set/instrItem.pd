@@ -1,4 +1,4 @@
-#N canvas 883 322 556 510 10;
+#N canvas 881 327 556 510 10;
 #X obj 37 22 inlet;
 #X obj 37 237 outlet;
 #X obj 94 21 r set-instruments;
@@ -141,7 +141,7 @@
 #X obj 429 35 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 179 362 spigot;
-#N canvas 568 566 585 309 move 1;
+#N canvas 568 566 585 309 move 0;
 #X obj 129 14 inlet;
 #X obj 164 75 unpack f f;
 #X obj 240 75 unpack f f;
@@ -174,6 +174,8 @@
 #X connect 14 1 1 0;
 #X connect 14 2 2 0;
 #X restore 100 389 pd move;
+#X obj 56 74 fixScaleX;
+#X obj 56 101 t a a;
 #X connect 0 0 29 0;
 #X connect 2 0 3 0;
 #X connect 3 1 4 0;
@@ -204,8 +206,7 @@
 #X connect 26 0 25 1;
 #X connect 27 0 25 2;
 #X connect 29 0 10 0;
-#X connect 29 1 32 0;
-#X connect 29 2 13 0;
+#X connect 29 1 40 0;
 #X connect 30 0 31 1;
 #X connect 30 0 31 2;
 #X connect 31 0 28 0;
@@ -219,3 +220,6 @@
 #X connect 38 0 39 0;
 #X connect 39 0 28 1;
 #X connect 39 1 28 2;
+#X connect 40 0 41 0;
+#X connect 41 0 32 0;
+#X connect 41 1 13 0;

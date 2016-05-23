@@ -1,4 +1,4 @@
-#N canvas 866 262 577 542 10;
+#N canvas 858 277 577 542 10;
 #X declare -path ../;
 #X declare -path ../;
 #X declare -path ../;
@@ -11,20 +11,20 @@
 #X floatatom 356 160 5 0 0 0 - - -, f 5;
 #X floatatom 188 162 5 0 0 0 - - -, f 5;
 #X obj 82 161 poftranslate 0 8;
-#N canvas 746 75 468 347 mode 0;
-#X obj 113 40 inlet;
-#X obj 142 70 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#N canvas 734 107 468 347 mode 0;
+#X obj 113 20 inlet;
+#X obj 142 50 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 138 256;
-#X obj 204 69 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#X obj 204 49 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 101 256;
-#X obj 182 36 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 182 16 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 113 93 cadre;
+#X obj 113 73 cadre;
 #X floatatom 235 106 5 0 0 0 - - -, f 5;
 #X obj 113 127 imageTouch balance/Mode.png 0.33;
 #X obj 113 165 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 164 274 mode/listGui;
+#X obj 164 272 mode/listGui;
 #X obj 164 190 r overHead;
 #X obj 164 215 pofvisible;
 #X obj 164 239 t a a;
@@ -41,12 +41,13 @@
 -1;
 #X obj 4 225 mode/say 1 OuvertureMode;
 #X obj 64 302 mode/say 1 finmode;
+#X obj 113 100 fixScaleX;
 #X connect 0 0 4 0;
 #X connect 1 0 4 1;
 #X connect 2 0 4 2;
 #X connect 3 0 1 0;
 #X connect 3 0 2 0;
-#X connect 4 0 6 0;
+#X connect 4 0 24 0;
 #X connect 5 0 6 1;
 #X connect 6 0 7 0;
 #X connect 6 0 15 0;
@@ -66,6 +67,7 @@
 #X connect 19 0 12 0;
 #X connect 20 0 14 0;
 #X connect 21 0 23 0;
+#X connect 24 0 6 0;
 #X restore 63 282 pd mode;
 #X obj 63 260 poftranslate 0 8;
 #X obj 275 54 declare -path ../;
@@ -612,7 +614,7 @@
 #X obj 244 271 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 103 256;
 #X obj 82 185 pofimage balance/PopUpBalancesVide.png 757 573;
-#N canvas 562 75 811 792 set_load/save 0;
+#N canvas 556 83 811 792 set_load/save 0;
 #X obj 112 10 inlet;
 #X obj 141 40 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 129 256;
@@ -623,7 +625,7 @@
 #X obj 112 63 cadre;
 #X obj 91 165 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 82 226 r overHead;
+#X obj 82 211 r overHead;
 #X obj 82 283 t a a;
 #X obj 109 330 poftouch 6000 6000;
 #X obj 214 352 route down;
@@ -646,13 +648,13 @@
 #X obj 444 179 r page;
 #X floatatom 493 108 5 0 0 0 - - -, f 5;
 #X obj 369 232 pofvisible;
-#X obj 416 61 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#X obj 416 41 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 40 256;
-#X obj 112 100 poftranslate;
-#X obj 161 79 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#X obj 112 89 poftranslate;
+#X obj 161 68 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 -39 256;
-#X obj 369 81 poftranslate;
-#X obj 112 129 imageTouchOnOff set/Load 0.28;
+#X obj 369 61 poftranslate;
+#X obj 112 136 imageTouchOnOff set/Load 0.28;
 #X obj 369 106 imageTouchOnOff set/Save 0.28;
 #X obj 282 105 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -840,7 +842,7 @@
 #X obj 664 543 isInside 230 50;
 #X msg 663 564 0;
 #X obj 137 564 pofcolor 1 1 1 0.1;
-#X obj 369 200 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 369 200 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 397 209 s set-saving;
 #X obj 642 92 r set-saving;
@@ -851,7 +853,7 @@
 #X obj 124 534 clip 0.1 1;
 #X obj 568 42 r set-saving-name;
 #X msg 568 65 1;
-#N canvas 583 99 853 592 PLAY/REC 0;
+#N canvas 689 110 853 592 PLAY/REC 0;
 #X obj 325 131 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 445 126 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -883,7 +885,6 @@
 #X msg 383 52 symbol set-table-10;
 #X obj 423 361 s set-saving-name-recorded;
 #X obj 182 28 inlet;
-#X obj 208 179 rec/gui nomSet;
 #X obj 88 188 poftranslate;
 #X obj 148 168 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 -128 256;
@@ -899,7 +900,9 @@
 #X obj 471 274 sel 0;
 #X msg 471 296 0;
 #X obj 325 104 r nomSet-rec;
-#X connect 0 0 37 0;
+#X obj 208 179 rec/gui nomSet;
+#X obj 207 102 antiFixScaleX;
+#X connect 0 0 36 0;
 #X connect 1 0 17 0;
 #X connect 2 0 5 0;
 #X connect 3 0 4 0;
@@ -908,7 +911,7 @@
 #X connect 8 0 7 0;
 #X connect 8 1 7 1;
 #X connect 8 1 26 0;
-#X connect 8 1 40 0;
+#X connect 8 1 39 0;
 #X connect 9 0 13 0;
 #X connect 10 0 11 0;
 #X connect 11 0 9 1;
@@ -927,21 +930,22 @@
 #X connect 24 0 13 1;
 #X connect 25 0 2 1;
 #X connect 25 0 22 1;
-#X connect 27 0 29 0;
 #X connect 27 0 28 0;
-#X connect 29 0 33 0;
-#X connect 30 0 29 2;
-#X connect 31 0 29 1;
-#X connect 32 0 33 0;
-#X connect 34 0 32 0;
-#X connect 35 0 39 0;
-#X connect 36 0 1 0;
-#X connect 37 0 2 0;
-#X connect 37 1 38 0;
-#X connect 38 0 4 1;
-#X connect 39 0 40 0;
-#X connect 40 0 4 1;
-#X connect 41 0 0 0;
+#X connect 27 0 42 0;
+#X connect 28 0 32 0;
+#X connect 29 0 28 2;
+#X connect 30 0 28 1;
+#X connect 31 0 32 0;
+#X connect 33 0 31 0;
+#X connect 34 0 38 0;
+#X connect 35 0 1 0;
+#X connect 36 0 2 0;
+#X connect 36 1 37 0;
+#X connect 37 0 4 1;
+#X connect 38 0 39 0;
+#X connect 39 0 4 1;
+#X connect 40 0 0 0;
+#X connect 42 0 41 0;
 #X restore 671 434 pd PLAY/REC;
 #X msg 596 85 1;
 #X obj 568 131 &&;
@@ -1094,6 +1098,8 @@
 #X msg 475 550 0;
 #X obj 662 731 s rec-rec;
 #X msg 662 706 cancel;
+#X obj 112 112 fixScaleX;
+#X obj 369 83 fixScaleX;
 #X connect 0 0 4 0;
 #X connect 1 0 4 1;
 #X connect 2 0 4 2;
@@ -1132,9 +1138,9 @@
 #X connect 27 0 34 1;
 #X connect 28 0 19 0;
 #X connect 29 0 32 2;
-#X connect 30 0 33 0;
+#X connect 30 0 130 0;
 #X connect 31 0 30 2;
-#X connect 32 0 34 0;
+#X connect 32 0 131 0;
 #X connect 33 0 11 0;
 #X connect 34 0 40 0;
 #X connect 35 0 33 2;
@@ -1234,14 +1240,15 @@
 #X connect 119 1 125 0;
 #X connect 127 0 22 0;
 #X connect 129 0 128 0;
+#X connect 130 0 33 0;
+#X connect 131 0 34 0;
 #X restore 150 316 pd set_load/save;
-#X obj 7 113 topBar Balance;
 #X obj 259 367 poftranslate 0 8;
 #X obj 291 345 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 -235 256;
 #X obj 353 344 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 79 256;
-#N canvas 710 194 663 465 fx 0;
+#N canvas 708 199 663 465 fx 0;
 #X obj 46 21 inlet;
 #X obj 75 51 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 252 256;
@@ -1291,6 +1298,8 @@
 #X obj 280 321 t b f;
 #X obj 189 417 s fx-update-instr;
 #X obj 46 290 imageKnob balance/Effet.png 0.3;
+#X obj 280 174 fixScaleX;
+#X obj 46 173 fixScaleX;
 #X connect 0 0 4 0;
 #X connect 1 0 4 1;
 #X connect 2 0 4 2;
@@ -1301,11 +1310,11 @@
 #X connect 5 0 22 1;
 #X connect 6 0 8 1;
 #X connect 7 0 8 2;
-#X connect 8 0 22 0;
+#X connect 8 0 37 0;
 #X connect 9 0 23 1;
 #X connect 10 0 12 1;
 #X connect 11 0 12 2;
-#X connect 12 0 23 0;
+#X connect 12 0 36 0;
 #X connect 13 0 15 1;
 #X connect 14 0 15 2;
 #X connect 15 0 35 0;
@@ -1334,6 +1343,8 @@
 #X connect 33 0 31 0;
 #X connect 33 1 29 0;
 #X connect 35 0 32 0;
+#X connect 36 0 23 0;
+#X connect 37 0 22 0;
 #X restore 259 389 pd fx;
 #X obj 148 503 v;
 #X obj 372 260 poftranslate 158 72;
@@ -1342,8 +1353,13 @@
 -262144 -1 -1 328 256;
 #X obj 508 357 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 20 256;
-#N canvas 837 162 663 465 fader 1;
+#N canvas 837 162 663 465 fader 0;
 #X obj 46 21 inlet;
+#X obj 46 44 t a a;
+#X obj 73 67 pofcolor 0.9 0.9 0.9 1;
+#X floatatom 122 118 5 0 0 0 - - -, f 5;
+#X obj 46 139 poftranslate 0 145;
+#X obj 73 89 cadreVec 70 325;
 #X obj 46 184 concert/fader 1 1;
 #X obj 46 204 concert/fader 2 1;
 #X obj 46 225 concert/fader 3 1;
@@ -1354,30 +1370,26 @@
 #X obj 46 327 concert/fader 8 1;
 #X obj 46 347 concert/fader 9 1;
 #X obj 46 163 concert/fader 0 1;
-#X obj 46 44 t a a;
-#X obj 73 67 pofcolor 0.9 0.9 0.9 1;
-#X floatatom 122 118 5 0 0 0 - - -, f 5;
-#X obj 46 139 poftranslate 0 145;
-#X obj 73 89 cadreVec 70 325;
-#X connect 0 0 11 0;
-#X connect 1 0 2 0;
-#X connect 2 0 3 0;
-#X connect 3 0 4 0;
-#X connect 4 0 5 0;
-#X connect 5 0 6 0;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 1 1 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 2;
+#X connect 4 0 15 0;
 #X connect 6 0 7 0;
 #X connect 7 0 8 0;
 #X connect 8 0 9 0;
-#X connect 10 0 1 0;
-#X connect 11 0 14 0;
-#X connect 11 1 12 0;
-#X connect 12 0 15 0;
-#X connect 13 0 14 2;
-#X connect 14 0 10 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 15 0 6 0;
 #X restore 414 402 pd fader;
+#X obj 7 113 topBar Balance;
 #X connect 0 0 1 0;
 #X connect 1 0 18 0;
-#X connect 1 0 35 0;
+#X connect 1 0 45 0;
 #X connect 1 1 12 0;
 #X connect 1 2 4 0;
 #X connect 2 0 4 0;
@@ -1390,14 +1402,14 @@
 #X connect 12 0 8 0;
 #X connect 13 0 10 1;
 #X connect 14 0 10 2;
-#X connect 15 0 41 1;
-#X connect 16 0 41 2;
+#X connect 15 0 40 1;
+#X connect 16 0 40 2;
 #X connect 18 0 10 0;
 #X connect 18 1 20 0;
 #X connect 18 1 30 0;
-#X connect 18 1 36 0;
+#X connect 18 1 35 0;
+#X connect 18 2 40 0;
 #X connect 18 2 41 0;
-#X connect 18 2 42 0;
 #X connect 23 0 26 0;
 #X connect 24 0 25 0;
 #X connect 26 0 24 0;
@@ -1405,11 +1417,11 @@
 #X connect 30 0 34 0;
 #X connect 31 0 30 1;
 #X connect 32 0 30 2;
-#X connect 36 0 39 0;
-#X connect 37 0 36 1;
-#X connect 38 0 36 2;
-#X connect 41 0 19 0;
-#X connect 41 0 29 0;
-#X connect 42 0 45 0;
-#X connect 43 0 42 1;
-#X connect 44 0 42 2;
+#X connect 35 0 38 0;
+#X connect 36 0 35 1;
+#X connect 37 0 35 2;
+#X connect 40 0 19 0;
+#X connect 40 0 29 0;
+#X connect 41 0 44 0;
+#X connect 42 0 41 1;
+#X connect 43 0 41 2;
