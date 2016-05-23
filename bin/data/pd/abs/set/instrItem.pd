@@ -1,4 +1,4 @@
-#N canvas 879 332 556 510 10;
+#N canvas 877 337 556 510 10;
 #X obj 37 22 inlet;
 #X obj 37 237 outlet;
 #X obj 94 21 r set-instruments;
@@ -32,7 +32,7 @@
 -262144 -1 -1 0 256;
 #X obj 177 298 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 -50 256;
-#N canvas 675 404 663 465 fx 0;
+#N canvas 673 409 663 465 fx 1;
 #X obj 46 21 inlet;
 #X obj 183 9 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -79,11 +79,9 @@
 #X obj 203 31 f \$1;
 #X obj 369 10 r fx-update-instr;
 #X obj 369 32 sel \$1;
-#X obj 280 299 imageKnob balance/Param.png 0.3;
 #X obj 495 25 inlet incr1;
 #X obj 581 24 inlet incr2;
-#X msg 495 49 incr \$1;
-#X msg 580 45 incr \$1;
+#X obj 280 299 imageKnob balance/Param.png 0.3;
 #X connect 0 0 5 0;
 #X connect 0 0 9 0;
 #X connect 1 0 32 0;
@@ -102,10 +100,10 @@
 #X connect 13 0 11 0;
 #X connect 14 0 16 1;
 #X connect 15 0 16 2;
-#X connect 16 0 35 0;
+#X connect 16 0 37 0;
 #X connect 17 0 14 0;
 #X connect 17 0 15 0;
-#X connect 19 0 35 3;
+#X connect 19 0 37 3;
 #X connect 20 0 21 0;
 #X connect 20 0 22 0;
 #X connect 20 0 24 1;
@@ -123,11 +121,9 @@
 #X connect 32 0 25 1;
 #X connect 33 0 34 0;
 #X connect 34 0 20 0;
-#X connect 35 0 27 0;
-#X connect 36 0 38 0;
-#X connect 37 0 39 0;
-#X connect 38 0 29 3;
-#X connect 39 0 35 3;
+#X connect 35 0 29 3;
+#X connect 36 0 37 3;
+#X connect 37 0 27 0;
 #X restore 83 414 pd fx;
 #X obj 37 43 t a a a;
 #X obj 120 342 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
@@ -141,7 +137,7 @@
 #X obj 429 35 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 179 362 spigot;
-#N canvas 566 566 585 309 move 0;
+#N canvas 562 566 585 309 move 1;
 #X obj 129 14 inlet;
 #X obj 164 75 unpack f f;
 #X obj 240 75 unpack f f;
@@ -149,14 +145,24 @@
 #X obj 164 130 -;
 #X obj 221 101 t f f;
 #X obj 221 130 -;
-#X obj 164 188 outlet;
-#X obj 221 186 outlet;
+#X obj 164 255 outlet;
+#X obj 221 253 outlet;
 #X obj 164 166 * 0.01;
 #X obj 129 59 b;
-#X obj 292 130 r fx-fx-\$1;
-#X obj 368 129 r fx-param-\$1;
+#X obj 316 128 r fx-fx-\$1;
+#X obj 392 127 r fx-param-\$1;
 #X obj 129 36 route up move down;
 #X obj 221 164 * -0.01;
+#X msg 164 191 incr \$1;
+#X msg 221 188 incr \$1;
+#X obj 301 153 f;
+#X obj 377 154 f;
+#X obj 286 174 f;
+#X obj 362 175 f;
+#X obj 290 128 b;
+#X obj 277 152 b;
+#X msg 287 196 out \$1;
+#X msg 362 201 out \$1;
 #X connect 0 0 13 0;
 #X connect 1 0 3 0;
 #X connect 1 1 5 0;
@@ -168,11 +174,27 @@
 #X connect 5 0 6 1;
 #X connect 5 1 6 0;
 #X connect 6 0 14 0;
-#X connect 9 0 7 0;
+#X connect 9 0 15 0;
+#X connect 10 0 22 0;
+#X connect 11 0 17 1;
+#X connect 12 0 18 1;
 #X connect 13 0 10 0;
 #X connect 13 1 1 0;
 #X connect 13 2 2 0;
-#X connect 14 0 8 0;
+#X connect 13 2 21 0;
+#X connect 14 0 16 0;
+#X connect 15 0 7 0;
+#X connect 16 0 8 0;
+#X connect 17 0 19 1;
+#X connect 18 0 20 1;
+#X connect 19 0 23 0;
+#X connect 20 0 24 0;
+#X connect 21 0 17 0;
+#X connect 21 0 18 0;
+#X connect 22 0 19 0;
+#X connect 22 0 20 0;
+#X connect 23 0 7 0;
+#X connect 24 0 8 0;
 #X restore 100 389 pd move;
 #X obj 56 74 fixScaleX;
 #X obj 56 101 t a a;
