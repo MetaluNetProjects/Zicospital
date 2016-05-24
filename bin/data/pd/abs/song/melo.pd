@@ -1,4 +1,4 @@
-#N canvas 1490 82 710 627 10;
+#N canvas 601 123 710 627 10;
 #X obj 157 5 r song-midi-melo-\$1;
 #X obj 157 29 poly 5 1;
 #X obj 179 164 mtof;
