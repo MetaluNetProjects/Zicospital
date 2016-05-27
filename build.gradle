@@ -1,4 +1,5 @@
 buildscript {
+    
     repositories {
         jcenter()
     }
@@ -18,20 +19,21 @@ allprojects {
 
 apply plugin: 'com.android.application'
 
+
+
 android {
     compileSdkVersion 22
     buildToolsVersion '23.0.1'
 
+    lintOptions {
+      abortOnError false
+    }
+    
     defaultConfig {
         minSdkVersion 8
         targetSdkVersion 22
     }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-        }
-    }
+    
 
     // Configure source folders like Eclipse
     sourceSets {
@@ -49,6 +51,12 @@ android {
     }
 }
 
+if(project.hasProperty("AA.signing")
+ && new File(project.property("AA.signing")).exists()) {
+    apply from: project.property("AA.signing");
+}
+
+
 dependencies {
     compile project(':ofAndroidLib')
 }
@@ -58,3 +66,5 @@ clean.dependsOn(":openFrameworksProject:clean")
 assembleDebug.dependsOn(":openFrameworksProject:compileDebugOF")
 
 assembleRelease.dependsOn(":openFrameworksProject:compileReleaseOF")
+
+
