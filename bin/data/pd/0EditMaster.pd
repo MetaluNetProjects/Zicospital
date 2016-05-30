@@ -1,4 +1,4 @@
-#N canvas 287 170 479 285 10;
+#N canvas 285 175 479 285 10;
 #X declare -stdpath cyclone -lib cyclone;
 #X declare -stdpath zexy -lib zexy;
 #X declare -lib pof;
@@ -26,7 +26,7 @@
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X restore 174 93 pd bang_on_first_frame;
-#X msg 174 115 window 800 600 0 \, framerate 60 \, background 0 0 0
+#X msg 174 115 window 800 600 0 \, framerate 25 \, background 0 0 0
 ;
 #X connect 4 0 5 0;
 #X connect 7 0 8 0;
