@@ -1,4 +1,4 @@
-#N canvas 522 162 811 531 10;
+#N canvas 468 167 811 531 10;
 #X obj 149 8 r song-midi-drum-\$1;
 #X obj 199 208 clip 0 1;
 #X obj 199 138 / 128;
@@ -38,6 +38,7 @@
 #X obj 405 264 s fx-fx-\$1;
 #X obj 538 261 s fx-param-\$1;
 #X obj 125 254 *~;
+#X obj 44 259 r~ DENORM;
 #X connect 0 0 13 0;
 #X connect 1 0 11 0;
 #X connect 2 0 19 0;
@@ -82,3 +83,4 @@
 #X connect 33 0 35 0;
 #X connect 34 0 31 0;
 #X connect 37 0 27 0;
+#X connect 38 0 27 0;

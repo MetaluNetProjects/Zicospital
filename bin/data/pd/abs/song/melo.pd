@@ -1,4 +1,4 @@
-#N canvas 601 123 710 627 10;
+#N canvas 569 128 710 627 10;
 #X obj 157 5 r song-midi-melo-\$1;
 #X obj 157 29 poly 5 1;
 #X obj 179 164 mtof;
@@ -38,6 +38,7 @@
 #X obj 544 176 s fx-param-\$1;
 #X obj 134 330 +~;
 #X obj 134 366 *~;
+#X obj 61 366 r~ DENORM;
 #X connect 0 0 1 0;
 #X connect 1 0 10 0;
 #X connect 1 1 3 0;
@@ -82,3 +83,4 @@
 #X connect 34 0 31 0;
 #X connect 37 0 38 0;
 #X connect 38 0 23 0;
+#X connect 39 0 23 0;
