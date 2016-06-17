@@ -1,4 +1,4 @@
-#N canvas 1320 135 526 631 10;
+#N canvas 1367 140 526 631 10;
 #X declare -path abs;
 #X declare -path ../;
 #X declare -path ../;
@@ -19,7 +19,7 @@
 #X connect 2 0 0 0;
 #X restore 18 98 pd bang_on_first_frame;
 #X obj 14 30 declare -path abs;
-#N canvas 586 214 689 531 mainHead 1;
+#N canvas 586 214 689 531 mainHead 0;
 #X obj 100 16 pofhead;
 #X obj 156 20 pofwin;
 #X obj 156 44 route window;
@@ -166,7 +166,7 @@
 #X obj 17 340 set/manager;
 #X obj 177 246 s pageHead;
 #X obj 18 419 song/player;
-#N canvas 10 75 570 416 audioMaster 0;
+#N canvas 8 82 570 416 audioMaster 0;
 #X obj 211 163 catch~ Out-1;
 #X obj 80 278 *~;
 #X obj 96 255 z~ 64;
@@ -259,7 +259,7 @@
 #X obj 157 266 fixScaleX;
 #X obj 157 287 t a a;
 #X obj 345 408 fixScaleX;
-#X obj 81 185 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 81 185 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X floatatom 88 570 5 0 0 0 - - -, f 5;
 #X msg 155 519 0;
@@ -271,7 +271,7 @@
 #X obj 163 572 pofwin;
 #X obj 181 544 f;
 #X obj 205 580 pofwin;
-#X obj 223 177 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 223 177 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 129 458 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -280,6 +280,10 @@
 #X msg 280 529 none;
 #X obj 278 564 s page;
 #X msg 325 517 concert;
+#X obj 417 97 switch~;
+#X obj 417 77 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 417 55 loadbang;
 #X connect 1 0 0 0;
 #X connect 2 0 15 0;
 #X connect 5 0 4 0;
@@ -314,3 +318,5 @@
 #X connect 52 0 37 0;
 #X connect 53 0 54 0;
 #X connect 55 0 54 0;
+#X connect 57 0 56 0;
+#X connect 58 0 57 0;

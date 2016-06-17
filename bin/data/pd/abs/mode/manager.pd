@@ -1,4 +1,4 @@
-#N canvas 744 75 593 379 10;
+#N canvas 742 82 593 379 10;
 #X obj 93 119 pofxml modes;
 #X symbolatom 63 45 0 0 0 0 - - -;
 #N canvas 251 353 552 504 create 0;
@@ -444,6 +444,10 @@
 #X obj 299 289 del 0;
 #X obj 413 329 mode/say 1 Allumage;
 #X obj 415 294 mode/say 1 rien;
+#X obj 117 297 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 117 275 loadbang;
+#X obj 117 317 switch~;
 #X connect 1 0 5 1;
 #X connect 5 0 9 0;
 #X connect 6 0 1 0;
@@ -460,3 +464,5 @@
 #X connect 26 0 27 0;
 #X connect 27 0 28 0;
 #X connect 28 0 24 0;
+#X connect 31 0 33 0;
+#X connect 32 0 31 0;
