@@ -21,7 +21,7 @@ extern "C" {
     extern void atan_tilde_setup();
 }
 
-const char TAG[]="Zicospital";
+const char Tag[]="Zicospital";
 
 //--------------------------------------------------------------
 void testApp::setup() {
@@ -35,29 +35,30 @@ void testApp::setup() {
 	//#else
 		int ticksPerBuffer = 1; // 8 * 64 = buffer len of 512
 		int numInputs = 1;
+		int sampleRate = 44100;
 	//#endif
 	
-    ofSetFrameRate(60);
-	ofSetVerticalSync(true);
+    //ofSetFrameRate(60);
+	//ofSetVerticalSync(true);
 
-	ofLogNotice(TAG, "init sound");
+	ofLogNotice(Tag, "init sound");
 	// setup OF sound stream
 	//ofSoundStreamSetup(2, numInputs, this, 44100, ofxPd::blockSize()*ticksPerBuffer, 4);
 	os = NULL;
-	os = opensl_open(44100, numInputs, 2, ticksPerBuffer*PdBase::blockSize(), testApp::opensl_process, (void*)this);
-	if(os == NULL) ofLogError(TAG, "error opening opensl");
+	os = opensl_open(sampleRate, numInputs, 2, ticksPerBuffer*PdBase::blockSize(), testApp::opensl_process, (void*)this);
+	if(os == NULL) ofLogError(Tag, "error opening opensl");
 
 	ofxAccelerometer.setup();
 	
-	ofLogNotice(TAG, "init pd");
-	if(!puda.init(2, numInputs, 44100, ticksPerBuffer)) {
+	ofLogNotice(Tag, "init pd");
+	if(!puda.init(2, numInputs, sampleRate, ticksPerBuffer)) {
 		ofExit();
 	}
 	
-	ofLogNotice(TAG, "init pof");
+	ofLogNotice(Tag, "init pof");
 	pofBase::setup();
 	
-	ofLogNotice(TAG, "start pd");
+	ofLogNotice(Tag, "start pd");
 	puda.start();
 	
 	
@@ -72,7 +73,7 @@ void testApp::setup() {
     // ---------------------------------------------
 	
 	
-	ofLogNotice(TAG, "load patch");
+	ofLogNotice(Tag, "load patch");
 	Patch patch = puda.openPatch(ofToDataPath("pd/pof_main.pd"));
 		
 	if(os) opensl_start(os);
@@ -89,7 +90,13 @@ void testApp::draw() {
 }
 
 //--------------------------------------------------------------
-void testApp::exit() {}
+//--------------------------------------------------------------
+void testApp::exit() {
+	ofLogNotice(Tag, "exit");
+	if(os) opensl_close(os);
+	pofBase::release();
+	ofExit();
+}
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key) {}

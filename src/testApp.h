@@ -29,6 +29,7 @@ class testApp : public ofxAndroidApp{
 		virtual void touchCancelled(int x, int y, int id) {};
 		virtual bool backPressed(){
 			ofLogNotice("testApp", "back pressed");
+			exit();
 			ofExit();
 			return true;
 		}
