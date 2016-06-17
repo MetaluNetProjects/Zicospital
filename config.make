@@ -3,7 +3,7 @@
 #   This file is where we make project specific configurations.
 ################################################################################
 
-#ABIS_TO_COMPILE_RELEASE = armv5 armv7 neon
+ABIS_TO_COMPILE_RELEASE = armv7 neon x86
 #ABIS_TO_COMPILE_RELEASE = armv7
 ################################################################################
 # OF ROOT
